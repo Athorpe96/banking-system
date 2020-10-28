@@ -2,7 +2,7 @@
 const db = require("../models");
 const passport = require("../config/passport");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -35,7 +35,13 @@ module.exports = function(app) {
     req.logout();
     res.redirect("/");
   });
+  app.get("/api/accounts", (req, res) => {
+    db.Accounts.findAll({}).then(function (Accounts) {
+      // We have access to the todos as an argument inside of the callback function
+      res.json(Accounts);
+    });
 
+  })
   // Route for getting some data about our user to be used client side
   app.get("/api/user_data", (req, res) => {
     if (!req.user) {
@@ -50,4 +56,7 @@ module.exports = function(app) {
       });
     }
   });
+
 };
+
+
