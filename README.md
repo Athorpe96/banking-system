@@ -1,3 +1,5 @@
 # banking-system
 
-## Install all the dependencies and update config.json to run!!
+## Install all the dependencies and update config.json and create database in workbench to run!!
+
+## Make sure to git pull so you get the up to date code before pushing your code and also make sure to test and make sure it is running properly!
