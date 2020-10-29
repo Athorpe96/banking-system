@@ -14,6 +14,19 @@ module.exports = function (app) {
     });
   });
 
+  app.post("/api/signup", (req, res) => {
+    db.User.create({
+      email: req.body.email,
+      password: req.body.password
+    })
+      .then(() => {
+        res.redirect(307, "/api/login");
+      })
+      .catch(err => {
+        res.status(401).json(err);
+      });
+  });
+
   app.get("/api/accounts", function (req, res) {
     // findAll returns all entries for a table when used with no options
     db.Accounts.findAll({}).then(function (accounts) {
@@ -36,21 +49,39 @@ module.exports = function (app) {
     });
   });
 
-
-
-  app.post("/api/signup", (req, res) => {
-    db.User.create({
-      email: req.body.email,
-      password: req.body.password
+  app.get("/api/accounts/:id", function (req, res) {
+    db.Account.findOne({
+      where: {
+        id: req.params.id
+      }
     })
-      .then(() => {
-        res.redirect(307, "/api/login");
-      })
-      .catch(err => {
-        res.status(401).json(err);
+      .then(function (accounts) {
+        res.json(accounts);
       });
   });
 
+  app.delete("/api/accounts/:id", function (req, res) {
+    db.Accounts.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(function (accounts) {
+        res.json(accounts);
+      });
+  });
+
+  app.put("/api/Acounts", function (req, res) {
+    db.Accounts.update(req.body,
+      {
+        where: {
+          id: req.body.id
+        }
+      })
+      .then(function (accounts) {
+        res.json(accounts);
+      });
+  });
 
   app.get("/logout", (req, res) => {
     req.logout();
@@ -68,8 +99,12 @@ module.exports = function (app) {
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
         email: req.user.email,
-        id: req.user.id
+        id: req.user.id,
+        checking: req.user.checking,
+        savings: req.user.savings
       });
     }
   });
-};
+}
+
+
