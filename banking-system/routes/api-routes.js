@@ -2,7 +2,7 @@
 const db = require("../models");
 const passport = require("../config/passport");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -50,4 +50,60 @@ module.exports = function(app) {
       });
     }
   });
+
+  // banking routes
+
+  app.get("/api/accounts", function (req, res) {
+    db.Post.findall({})
+      .then(function (acc) {
+        res.json(acc)
+      })
+  });
+
+  app.get("api/accounts/:name", function (req, res) {
+    db.Post.findall({
+      where: {
+        name: req.params.name
+      }
+    })
+      .then(function (acc) {
+        res.json(acc)
+      })
+
+  });
+
+  app.post("/api/accounts", function (req, res) {
+    console.log("This is the created account", req.body)
+    db.Post.create({
+      name: req.body.name,
+      checking_balance: req.body.checking_balance,
+      savings_balance: req.body.savings_balance
+    })
+      .then(function (acc) {
+        res.json(acc)
+      })
+  });
+
+  app.delete("/api/accounts/:id", function (req, res) {
+    db.Post.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(function (acc) {
+        res.json(acc)
+      })
+  });
+
+  app.put("/api/accounts", function (req, res) {
+    db.Post.update(req.body, {
+      where: {
+        id: req.body.id
+      }
+    })
+      .then(function (acc) {
+        res.json(acc)
+      })
+  })
+
 };
