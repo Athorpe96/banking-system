@@ -3,5 +3,8 @@ $(document).ready(() => {
   // and updates the HTML on the page
   $.get("/api/user_data").then(data => {
     $(".member-name").text(data.email);
-  });
-});
+    // $(".input-savings").text(data.savings);
+    // $(".input-checkings").text(data.checkings);
+
+  })
+})
