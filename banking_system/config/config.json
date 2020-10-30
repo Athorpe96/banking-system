@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "Austin96",
-    "database": "passport_demo",
+    "database": "banking_system",
     "host": "localhost",
     "dialect": "mysql"
   },

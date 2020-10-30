@@ -14,30 +14,9 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/api/accounts", function (req, res) {
-    // findAll returns all entries for a table when used with no options
-    db.Accounts.findAll({}).then(function (accounts) {
-      // We have access to the todos as an argument inside of the callback function
-      res.json(accounts);
-    });
-  });
-
-  app.post("/api/accounts", function (req, res) {
-    console.log(req.body);
-    // create takes an argument of an object describing the item we want to
-    // insert into our table. In this case we just we pass in an object with a text
-    // and complete property (req.body)
-    db.Accounts.create({
-      savings: req.body.savings,
-      checking: req.body.checking
-    }).then(function (accounts) {
-      // We have access to the new todo as an argument inside of the callback function
-      res.json(accounts);
-    });
-  });
-
-
-
+  // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
+  // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
+  // otherwise send back an error
   app.post("/api/signup", (req, res) => {
     db.User.create({
       email: req.body.email,
@@ -51,12 +30,11 @@ module.exports = function (app) {
       });
   });
 
-
+  // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();
     res.redirect("/");
   });
-
 
   // Route for getting some data about our user to be used client side
   app.get("/api/user_data", (req, res) => {
