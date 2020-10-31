@@ -2,8 +2,12 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
-#center {
+.center {
   text-align: center;
+  background-color: rgba(0,0,0,.5);
+  border-radius: 20px;
+  padding: 10px;
+  width: 40%;
 }
 .row{
   text-align: center;
@@ -12,4 +16,53 @@ form.login {
   text-align: center;
   padding-left: 100px;
   padding-bottom: 50px;
+}
+
+body{
+  background-image: url("bank\ background.jpg");
+  color: whitesmoke;
+}
+
+.signUp1{
+color: whitesmoke;
+background-color: rgba(0,0,0,.5);
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.signup{
+  background-color: rgba(0,0,0,.5);
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.logInHere{
+  background-color: rgba(0,0,0,.5);
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.banking, .checking{
+  
+  text-align: center;
+  background-color: rgba(0,0,0,.5);
+  border-radius: 20px;
+  padding: 10px;
+  width: 30%;
+  color: whitesmoke;
+}
+
+
+#bank_title, .checkingTitle, .savingsTitle{
+  color: whitesmoke;
+}
+
+#checking_balance, #savings_balance, .transaction, .trans_type{
+  color: black;
+}
+
+#submit_balance, .submit_trans{
+  background-color: rgb(0, 89, 255);
+  border-radius: 5px;
 }
