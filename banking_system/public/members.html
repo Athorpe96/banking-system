@@ -32,7 +32,7 @@
       </div>
     </div>
   </div>
-  <div id="center">
+  <div class="banking">
     <h1 id="bank_title">Banking App</h1>
     <div id="balance_info">
       <p>Please enter your starting balances below.</p>
@@ -45,26 +45,28 @@
       </form>
     </div>
   </div>
-  <div class="row">
-    <div class="bank" id="checking_info">
-      <h2>Checking Account</h2>
-      <p id="current_checking_balance">Current Balance: </p>
-      <div id="enter_transaction">
-        <form id="transaction_form">
-          Amount:<br>
-          <input type="number" name="transaction_amount" id="transaction_amount" class="transaction"><br>
-          <div id="desc">
-            Description:<br>
-            <input type="text" name="transaction_description" id="transaction_description" class="transaction"><br>
-          </div>
-          <select name="transaction_type" id="transaction_type" class="trans_type">
-            <option value="Debit">Debit</option>
-            <option value="Deposit">Deposit</option>
-            <option value="Withdraw">Withdraw</option>
-            <option value="Transfer">Transfer</option>
-          </select>
-          <input type="button" value="Submit" id="submit_transaction" form="transaction_form" class="submit_trans">
-        </form>
+  <div class="checking">
+    <div class="row">
+      <div class="bank" id="checking_info">
+        <h2 class="checkingTitle">Checking Account</h2>
+        <p id="current_checking_balance">Current Balance: </p>
+        <div id="enter_transaction">
+          <form id="transaction_form">
+            Amount:<br>
+            <input type="number" name="transaction_amount" id="transaction_amount" class="transaction"><br>
+            <div id="desc">
+              Description:<br>
+              <input type="text" name="transaction_description" id="transaction_description" class="transaction"><br>
+            </div>
+            <select name="transaction_type" id="transaction_option" class="trans_type">
+              <option value="Debit">Debit</option>
+              <option value="Deposit">Deposit</option>
+              <option value="Withdraw">Withdraw</option>
+              <option value="Transfer">Transfer</option>
+            </select>
+            <input type="button" value="Submit" id="submit_transaction" form="transaction_form" class="submit_trans">
+          </form>
+        </div>
         <br>
       </div>
       <div class="table-center">
@@ -79,7 +81,7 @@
       </div>
     </div>
     <div class="bank" id="savings_info">
-      <h2>Savings Account</h2>
+      <h2 class="savingsTitle">Savings Account</h2>
       <p id="current_savings_balance">Current Balance: </p>
       <div id="enter_transaction_savings">
         <form id="transaction_form_savings">

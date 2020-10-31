@@ -50,4 +50,22 @@ module.exports = function (app) {
       });
     }
   });
+
+  app.get("/api/account", function (req, res) {
+    db.User.findAll({})
+      .then(function (acc) {
+        res.json(acc)
+      })
+  });
+
+  app.get("/api/accounts/:id", function (req, res) {
+    db.User.findOne({
+      where: {
+        id: req.body.id
+      }
+    })
+      .then(function (acc) {
+        res.json(acc)
+      })
+  })
 };
