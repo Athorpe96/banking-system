@@ -6,5 +6,9 @@ $(document).ready(() => {
     // $(".input-savings").text(data.savings);
     // $(".input-checkings").text(data.checkings);
 
-  })
-})
+
+
+  });
+});
+
+
