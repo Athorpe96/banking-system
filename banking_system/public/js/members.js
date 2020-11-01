@@ -1,12 +1,12 @@
-$(document).ready(() => {
+$(function () {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
   $.get("/api/user_data").then(data => {
     $(".member-name").text(data.email);
-    // $(".input-savings").text(data.savings);
-    // $(".input-checkings").text(data.checkings);
+    console.log(data.savings);
+    (data.checkings);
     const transactions = document.querySelector("#enter_transaction")
-
+    const transactionsSavings = document.querySelector("enter_transaction_savings");
     const transactionType = document.querySelector("#transaction_option")
     const transactionTypeSavings = document.querySelector("#transaction_type_savings");
     const transAmount = document.querySelector("#transaction_amount");
@@ -261,8 +261,8 @@ $(document).ready(() => {
         if (checkingAccount.balance >= howMuch) {
           checkingAccount.transfer(howMuch, savingsAccount);
           displayAccountBalances();
-          printTable(table, checkingAccount, "Transfer to Savings");
-          printTable(tableSavings, savingsAccount, "Transfer from Checking");
+          printTable(table, checkingAccount, "to savings");
+          printTable(tableSavings, savingsAccount, " from checking ");
         } else {
           alert("Not enough funds for transaction.")
         }
@@ -280,8 +280,8 @@ $(document).ready(() => {
         if (savingsAccount.balance >= howMuch) {
           savingsAccount.transfer(howMuch, checkingAccount);
           displayAccountBalances();
-          printTable(tableSavings, savingsAccount, "Transfer to Checking");
-          printTable(table, checkingAccount, "Transfer from Savings");
+          printTable(tableSavings, savingsAccount, " to Checking");
+          printTable(table, checkingAccount, " from Savings");
         } else {
           alert("Not enough funds for transaction.")
         }
@@ -296,15 +296,15 @@ $(document).ready(() => {
 
     function getStartingBalance() {
       // Get starting balance of both accounts.
-      let checkingStart = parseFloat(checkingStartingBalance.value);
-      let savingsStart = parseFloat(savingsStartingBalance.value);
-      let checkingFixed = parseFloat(checkStart.toFixed(2));
-      let savingFixed = parseFloat(saveStart.toFixed(2));
-      if (isNaN(checkingStart) || isNaN(savingsStart)) {
+      let checkStart = parseFloat(checkingStartingBalance.value);
+      let saveStart = parseFloat(savingsStartingBalance.value);
+      let checkFixed = parseFloat(checkStart.toFixed(2));
+      let saveFixed = parseFloat(saveStart.toFixed(2));
+      if (isNaN(checkStart) || isNaN(saveStart)) {
         alert("Enter starting balance.")
       } else {
-        checkingAccount.balance = checkingFixed;
-        savingsAccount.balance = savingFixed;
+        checkingAccount.balance = checkFixed;
+        savingsAccount.balance = saveFixed;
         clearBox("balance_info");
         displayAccountBalances();
         hideToggle(checking_info);
