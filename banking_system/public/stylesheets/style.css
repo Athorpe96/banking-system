@@ -15,11 +15,17 @@ form.login {
 .table-center{
   text-align: center;
   padding-left: 40px;
-  padding-bottom: 50px;
+  padding-bottom: 45px;
   border:3px solid green;
   margin:auto;
   width:50%;
    word-spacing: 20px;
+    border-radius: 20px;
+
+  
+    
+    height:auto;
+    
 }
 
 body{
@@ -27,6 +33,10 @@ body{
   color: whitesmoke;
   background-color: rgba(0,0,0,.5);
    background-blend-mode: darken;
+    width:100%;
+    
+    height:auto;
+    width: auto;
 
 }
 
@@ -66,6 +76,10 @@ background-color: rgba(0,0,0,.5);
 
 #bank_title, .checkingTitle, .savingsTitle, #trans_table {
   color:whitesmoke;
+  width:100%;
+    
+    height:auto;
+    width: auto;
 }
 
 #checking_balance, #savings_balance, .transaction, .trans_type{
@@ -89,6 +103,7 @@ th.spacing-table{
 text-align: center;
 padding-left: 50px;
 color: white;
+
 }
 th.spacing-table1{
   word-spacing: 1px;
