@@ -32,11 +32,12 @@
       </div>
     </div>
   </div>
+
   <div class="banking">
     <h1 id="bank_title">Banking App</h1>
     <div id="balance_info">
       <p>Please enter your starting balances below.</p>
-      <form id="balance_form">
+      <form class="formBalance" id="balance_form">
         Checking Balance:<br>
         <input type="number" name="checking_balance" id="checking_balance" class="enter_balance"><br>
         Savings Balance:<br>
@@ -69,17 +70,18 @@
         </div>
         <br>
       </div>
-      <div class="table-center">
-        <table class="center-table" id="trans_table">
-          <tr class="top_of_table">
-            <th>Transaction Type</th>
-            <th>Descripton</th>
-            <th>Amount</th>
-            <th>Balance</th>
-          </tr>
-        </table>
-      </div>
     </div>
+    <div class="table-center">
+      <table class="center-table" id="trans_table">
+        <tr class="top_of_table">
+          <th class="spacing-table">Transaction Type </th>
+          <th class="spacing-table">Descripton</th>
+          <th class="spacing-table">Amount</th>
+          <th class="spacing-table">Balance</th>
+        </tr>
+      </table>
+    </div>
+
     <div class="bank" id="savings_info">
       <h2 class="savingsTitle">Savings Account</h2>
       <p id="current_savings_balance">Current Balance: </p>
@@ -100,10 +102,10 @@
       <div class="table-center">
         <table class="center-table" id="trans_table_savings">
           <tr class="top_of_table">
-            <th>Transaction Type</th>
-            <th>Descripton</th>
-            <th>Amount</th>
-            <th>Balance</th>
+            <th class="spacing-table1">Transaction Type</th>
+            <!-- <th class="spacing-table">Descripton</th> -->
+            <th class="spacing-table1">Amount</th>
+            <th class="spacing-table1">Balance</th>
           </tr>
         </table>
       </div>
