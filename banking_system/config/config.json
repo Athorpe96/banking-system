@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "212Sqlblue",
+    "password": "Austin96",
     "database": "banking_system",
     "host": "localhost",
     "dialect": "mysql"
