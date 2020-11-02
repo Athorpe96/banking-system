@@ -73,10 +73,11 @@ module.exports = function (app) {
       })
   })
 
-//   app.post("/api/balance", function (req, res) {
-//     console.log(req)
-//     const userId = req.user.id
-//     // db.User.findbyi
-//     res.send("message")
-//   })
-// };
+  //   app.post("/api/balance", function (req, res) {
+  //     console.log(req)
+  //     const userId = req.user.id
+  //     // db.User.findbyi
+  //     res.send("message")
+  //   })
+  // 
+}

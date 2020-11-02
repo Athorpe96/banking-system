@@ -366,7 +366,7 @@ $(function () {
 });
 
 
-  })
+ 
 
 
   // $("#submit_balance").on("click", function (e) {
@@ -379,4 +379,3 @@ $(function () {
   //       console.log(res)
   //     })
   // })
-})
