@@ -22,7 +22,7 @@ $(function () {
     let checkingAccount = {
       // Checking account.
       name: "checking",
-      balance: 0.00,
+      balance: data.checkings,
       allTransactions: [],
       deposit: function (amount) {
         this.balance += amount;
@@ -30,6 +30,7 @@ $(function () {
           type: "deposit",
           amount: amount,
         })
+        console.log(checkingAccount);
       },
       withdraw: function (amount) {
         this.balance -= amount;
@@ -65,7 +66,7 @@ $(function () {
     let savingsAccount = {
       // Savings account.
       name: "savings",
-      balance: 0,
+      balance: data.savings,
       allTransactions: [],
       deposit: function (amount) {
         this.balance += amount;
@@ -73,6 +74,7 @@ $(function () {
           type: "deposit",
           amount: amount,
         })
+        console.log(savingsAccount)
       },
       withdraw: function (amount) {
         this.balance -= amount;
