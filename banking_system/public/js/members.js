@@ -366,3 +366,16 @@ $(function () {
 });
 
 
+ 
+
+
+  // $("#submit_balance").on("click", function (e) {
+  //   const checkings = $("#checking_balance").val()
+  //   const savings = $("#savings_balance").val()
+  //   const payload = { checkings, savings }
+  //   console.log(payload)
+  //   $.post("/api/balance", payload)
+  //     .then(function (res) {
+  //       console.log(res)
+  //     })
+  // })

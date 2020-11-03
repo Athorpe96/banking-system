@@ -67,7 +67,17 @@ module.exports = function (app) {
       }
     })
       .then(function (acc) {
+
         res.json(acc)
+
       })
   })
-};
+
+  //   app.post("/api/balance", function (req, res) {
+  //     console.log(req)
+  //     const userId = req.user.id
+  //     // db.User.findbyi
+  //     res.send("message")
+  //   })
+  // 
+}
