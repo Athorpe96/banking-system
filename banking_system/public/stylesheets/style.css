@@ -74,7 +74,7 @@ background-color: rgba(0,0,0,.5);
 }
 
 
-#bank_title, .checkingTitle, .savingsTitle, #trans_table {
+#bank_title, .checkingTitle, .savingsTitle, #trans_table, #trans_table_saving {
   color:whitesmoke;
   width:100%;
     
@@ -113,14 +113,14 @@ padding-left: 80px;
 color: white;
 }
 .navUl{
-  padding: 0;
+  padding: 0 50px;
   margin: 0;
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
 }
 .newNav{
-  background:#003366;
+  background:#000018;
   height: 80px;
   width: 100%;
 }
@@ -150,5 +150,12 @@ nav ul li a{
   border-radius: 20px;
   padding: 10px;
   font-size: 18px;
+}
+.loginform{
+  background-color: rgba(0,0,0,.5);
+  border-radius: 20px;
+  padding: 10px;
+  color: whitesmoke;
+
 }
 

@@ -12,6 +12,7 @@ $(function () {
     const transAmount = document.querySelector("#transaction_amount");
     const transAmountSavings = document.querySelector("#transaction_amount_savings");
     const transDescription = document.querySelector("#transaction_description");
+    const transDescription2 = document.querySelector("#transaction_description2");
     const table = document.querySelector("#trans_table");
     const tableSavings = document.querySelector("#trans_table_savings");
     const desc = document.querySelector("#desc");
@@ -19,19 +20,31 @@ $(function () {
     const savingsStartingBalance = document.querySelector("#savings_balance");
     const balanceInfo = document.querySelector("#balance_info");
 
+    let id = data.id
+    console.log(id, "test")
     let checkingAccount = {
       // Checking account.
       name: "checking",
       balance: data.checkings,
       allTransactions: [],
+
+      //use user id to send PUT request to 
+      //url : /api/{id}
+
+
       deposit: function (amount) {
         this.balance += amount;
+        console.log(amount)
+        // $.ajax({ url: `/api/${id}`, type: 'PUT', data: { checkings: this.amount } }, function (res) {
+        //   console.log('new', res)
+        // })
         this.allTransactions.push({
           type: "deposit",
           amount: amount,
         })
         console.log(checkingAccount);
       },
+
       withdraw: function (amount) {
         this.balance -= amount;
         this.allTransactions.push({
@@ -203,14 +216,16 @@ $(function () {
     }
 
     function runDepositSavings() {
+
       // Savings deposit.
       let howMuch = Number.parseFloat(transAmountSavings.value);
+      let forWhat2 = transDescription2.value;
       if (isNaN(howMuch)) {
         alert("Enter Amount");
       } else if (howMuch <= 0) {
         alert("Enter positive number.")
       } else {
-        savingsAccount.deposit(howMuch);
+        savingsAccount.deposit(howMuch, forWhat2);
         displayAccountBalances();
         printTable(tableSavings, savingsAccount);
       }
@@ -263,7 +278,7 @@ $(function () {
         if (checkingAccount.balance >= howMuch) {
           checkingAccount.transfer(howMuch, savingsAccount);
           displayAccountBalances();
-          printTable(table, checkingAccount, "to savings");
+          printTable(table, checkingAccount, "savings");
           printTable(tableSavings, savingsAccount, " from checking ");
         } else {
           alert("Not enough funds for transaction.")
@@ -282,7 +297,7 @@ $(function () {
         if (savingsAccount.balance >= howMuch) {
           savingsAccount.transfer(howMuch, checkingAccount);
           displayAccountBalances();
-          printTable(tableSavings, savingsAccount, " to Checking");
+          printTable(tableSavings, savingsAccount, "  Checking");
           printTable(table, checkingAccount, " from Savings");
         } else {
           alert("Not enough funds for transaction.")

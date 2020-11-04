@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
+  <title>NFJF BANKING</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
@@ -16,14 +16,12 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/logout">
-          Logout
-        </a>
-      </div>
-    </div>
+  <nav class="newNav">
+    <label class="logo"> NFJF Banking</label>
+    <ul class="navUl">
+      <li><a href="/members">Home</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
   </nav>
   <div class="container">
     <div class="row">
@@ -89,6 +87,7 @@
         <form id="transaction_form_savings">
           Amount:<br>
           <input type="number" name="transaction_amount" id="transaction_amount_savings" class="transaction"><br>
+
           <select name="transaction_type" id="transaction_type_savings" class="trans_type">
             <option value="Deposit">Deposit</option>
             <option value="Withdraw">Withdraw</option>
@@ -99,17 +98,17 @@
         </form>
         <br>
       </div>
-      <div class="table-center">
+      <!-- <div class="table-center">
         <table class="center-table" id="trans_table_savings">
           <tr class="top_of_table">
             <th class="spacing-table1">Transaction Type</th>
-            <!-- <th class="spacing-table">Descripton</th> -->
-            <th class="spacing-table1">Amount</th>
+            !-- <th class="spacing-table1">Descripton</th> -->
+      <!-- <th class="spacing-table1">Amount</th>
             <th class="spacing-table1">Balance</th>
           </tr>
-        </table>
-      </div>
-    </div>
+        </table> -->
+    </div> -->
+  </div>
   </div>
 
 

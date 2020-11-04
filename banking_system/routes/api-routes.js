@@ -54,13 +54,12 @@ module.exports = function (app) {
       });
     }
   });
-  app.put("/api/user_data", function (req, res) {
+  app.put("/api/:data", function (req, res) {
     db.User.update(
       req.body,
       {
         where: {
-          id: req.body.id,
-          balance: req.body.id
+          id: req.params.data
         }
       }).then(function (dbUser) {
         res.json(dbUser);
